@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Laporan</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./ULstyle.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/fh-3.1.6/r-2.2.3/sc-2.0.1/sp-1.0.1/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/fh-3.1.6/r-2.2.3/sc-2.0.1/sp-1.0.1/datatables.min.js"></script>
+</head>
+
+<body onload="uncheck()">
+    <!-- partial:index.partial.html -->
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand px-5">Wajib Lapor Ketenagakerjaan</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100">
+              <li class="nav-item smart px-3 nav-slide active">
+                <a class="nav-text nav-link" href="#"><b>Upload Data WLK</b><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="DK1.html"><b>Data Karyawan</b></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="DP1.html"><b>Data Perusahaan</b></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="#"><b>Rekap Monitoring Laporan WLK</b></a>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+        <div class="container-fluid">
+            <div class="row mx-5" style="background-color: transparent;">
+                <div class="container-fluid py-1">
+                    <div class="row">
+                        <div class="col-md-12 py-2 text-left b-bottom">
+                            <h4 class="m-auto" style="color:white;">
+                                <a href="index.html" style="text-decoration: none;text-decoration-color: none; color: white;">Upload Laporan</a>
+                                >
+                                <a href="#" style="text-decoration: none;text-decoration-color: none; color: white;">Upload Summary</a>
+                            </h4>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="row border border-dark rounded p-3 mx-3 mb-3">
+                        
+                    </div>
+                    -->
+                    <div class="row p-3 mx-3 mb-3 rounded mt-3" style="background-color:transparent; border: 2px solid white;">
+                        <div class="row mx-3" style="color: white;">
+                            <h5>Hak Akses</h5>
+                        </div>
+                        <div class="col-md-12 rounded">
+                          <div class="container-fluid w-100">
+                            <div class="row">
+                              <div class="col-sm-6">
+                                <div class="container pr-5" style="border-right: 4px solid white;height: 100%;">
+
+                                  <!-- TOGGLE BUTTON -->
+                                  <div class="p-0 m-0 form-check text-left" style="color: white;font-size: 18px;">
+                                    <label class="m-2" for="CheckJamaah">Belum Memiliki</label>
+                                    <label class="switch p-1">
+                                      <input type="checkbox" data-toggle='' data-target='#usercollapse' id="CheckAkses">
+                                      <span class="slider round">
+                                    </label>
+                                    <label class="m-2" for="CheckJamaah">Sudah Memiliki</label>
+                                  </div>
+                                  <!-- TOGGLE BUTTON -->
+
+                                  <form id="usercollapse" class="page-item collapse" action="UL2.html">
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>Kode Pendaftaran</b></label>
+                                      <input type="text" class="form-control pt-0 HA-input" id="kodePendaftaran" aria-describedby="emailHelp" placeholder="Kode Pendaftaran..." style="color: white;">
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="tanggalDaftar" class="pb-0 mb-1"><b>Tanggal Pendaftaran</b></label> 
+                                      <input type="date" class="form-control pt-0 HA-input" id="Password1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label class="pb-0 mb-1" for="kotaPendaftaran"><b>Kota Pendaftaran</b></label>
+                                      <select class="custom-select HA-input my-1 mr-sm-2" id="kotaPendaftaran">
+                                        <option selected>Pilih Kota...</option>
+                                        <option value="1">Bandung</option>
+                                        <option value="2">Jakarta</option>
+                                        <option value="3">Semarang</option>
+                                      </select>
+                                      <small id="emailHelp" class="form-text" style="color:white;">Kota yang ditampilkan adalah data yang belum di upload.</small>
+                                    </div>
+                                    <div class="form-group float-right">
+                                      <button type="submit" class="btn page-link">Submit</button>
+                                    </div>
+                                    
+                                  </form>
+                                </div>
+                              </div>
+                              <div class="col-sm-6">
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-md-12 rounded">
+                                      <table class="table table-striped table-dark rounded w-100 h-100" id="table_id">
+                                          <thead>
+                                              <tr>
+                                                  <th scope="col">#</th>
+                                                  <th scope="col">Kota</th>
+                                                  <th scope="col">Kode Pendaftaran</th>
+                                                  <th scope="col">Tanggal Pendaftaran</th>
+                                                  <th scope="col">Tanggal Submit</th>
+                                                  <th scope="col">File</th>
+                                                  <th scope="col">Pembatalan</th>
+                                              </tr>
+                                          </thead>
+                                          <tbody>
+                                              <tr>
+                                                <th scope="row">1</th>
+                                                <td>Bandung</td>
+                                                <td>xxx</td>
+                                                <td>19/2/2019</td>
+                                                <td>28/2/2020</td>
+                                                <td><button class="btn btn-secondary">Download</button></td>
+                                                <td><form action="UL4.html"><button class="btn btn-danger">X</button></form></td>
+                                              </tr>
+                                              <tr>
+                                                <th scope="row">1</th>
+                                                <td>Bandung</td>
+                                                <td>xxx</td>
+                                                <td>19/2/2019</td>
+                                                <td>28/2/2020</td>
+                                                <td><button class="btn btn-secondary">Download</button></td>
+                                                <td><form action="UL4.html"><button class="btn btn-danger">X</button></form></td>
+                                              </tr>
+                                              <tr>
+                                                <th scope="row">1</th>
+                                                <td>Bandung</td>
+                                                <td>xxx</td>
+                                                <td>19/2/2019</td>
+                                                <td>28/2/2020</td>
+                                                <td><button class="btn btn-secondary">Download</button></td>
+                                                <td><form action="UL4.html"><button class="btn btn-danger">X</button></form></td>
+                                              </tr>
+                                          </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-footer flex">
+        <p class="foot">2020 | ABC@EF</p>
+    </div>
+    <!-- partial -->
+
+</body>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#table_id').DataTable({
+            searching: true,
+            "lengthMenu": [[10],[10]],
+            lengthChange:false,
+            scrollY: '35vh',
+            "pagingType": "simple",
+            "scrollX":true,
+            "sScrollX":"100%",
+        });
+    } );
+
+    $('#CheckAkses').on('change', function(event, state) {
+      var status = $('#kodePendaftaran').prop('disabled');
+      $('#kodePendaftaran').prop('disabled', !status);
+      if (status) {
+        $('#usercollapse').removeClass('collapse');
+      }else{
+        $('#usercollapse').addClass('collapse');
+      }
+    });
+    function uncheck(){
+      $(':checkbox:checked').prop('checked',false);
+      $('#kodePendaftaran').prop('disabled', true);
+    }
+</script>
+</html>

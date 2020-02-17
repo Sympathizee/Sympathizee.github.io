@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data Perusahaan</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./DP1style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/fh-3.1.6/r-2.2.3/sc-2.0.1/sp-1.0.1/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/fh-3.1.6/r-2.2.3/sc-2.0.1/sp-1.0.1/datatables.min.js"></script>
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand px-5">Wajib Lapor Ketenagakerjaan</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100">
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="#"><b>Upload Data WLK</b></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="DK1.html"><b>Data Karyawan</b></a>
+              </li>
+              <li class="nav-item active smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="DP1.html"><b>Data Perusahaan</b><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="#"><b>Rekap Monitoring Laporan WLK</b></a>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+        <div class="container-fluid">
+            <div class="row mx-5" style="background-color: transparent;">
+                <div class="container-fluid py-1">
+                    <div class="row">
+                        <div class="col-md-12 py-2 text-left b-bottom">
+                            <h4 class="m-auto" style="color:white;">
+                                <a href="index.html" style="text-decoration: none;text-decoration-color: none; color: white;">Data Perusahaan</a>
+                                >
+                                <a href="#" style="text-decoration: none;text-decoration-color: none; color: white;">Edit Eviden</a>
+                            </h4>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="row border border-dark rounded p-3 mx-3 mb-3">
+                        
+                    </div>
+                    -->
+                    <div class="row p-3 mx-3 mb-3 rounded mt-3" style="background-color:transparent; border: 2px solid white;">
+                        <div class="row mx-3" style="color: white;">
+                            <h5>Informasi Perusahaan</h5>
+                        </div>
+                        <div class="col-md-12 overflow-auto" style="max-height: 50vh; max-width: 90vw;">
+                          <div class="container-fluid w-100">
+                            <div class="row p-0 m-0">
+                              <div class="col-sm-12 px-2" style="text-align:left; color: white;font-weight: bold;">
+                                <form class="page-item">
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>AD-ART Telkom</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>Bukti Pengesahan Badan Hukum</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile02">
+                                          <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>Tanda Daftar Perusahaan</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>Surat Izin Usaha Perdagangan</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>Perjanjian Kerja Bersama</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>Daftar Kota/Kabupaten</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>Pengesahan Pendaftaran dari Kementrian Ketenagakerjaan</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>Surat Izin Pelaksana Penempatan TKI Swasta</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>Surat Izin Usaha Perekrutan dan Penempatan Awak Kapal</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                      <label for="Email1" class="pb-0 mb-1"><b>LPTKS (Jika Melaksanakan)</b></label>
+                                      <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text">Upload</span>
+                                        </div>
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group float-right">
+                                      <button type="submit" class="btn page-link">Submit</button>
+                                    </div>
+                                    
+                                  </form>
+                              </div>
+                            </div>
+                            <div class="row p-0 m-0">
+
+                            </div>  
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-footer flex">
+        <p class="foot">2020 | ABC@EF</p>
+    </div>
+    <!-- partial -->
+
+</body>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#table_id').DataTable({
+            searching: true,
+            "lengthMenu": [[10],[10]],
+            lengthChange:false,
+            scrollY: '35vh',
+            "pagingType": "simple",
+            "scrollX":true,
+            "sScrollX":"100%",
+        });
+    } );
+</script>
+</html>

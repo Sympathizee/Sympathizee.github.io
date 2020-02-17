@@ -1,7 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>mokup</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+</head>
+
 <body>
-	<h1>Hello World</h1>
-	<p>I'm hosted with GitHub Pages.</p>
+    <!-- partial:index.partial.html -->
+    <div class="header">
+
+        <div class="inner-header">
+            <div class="container-fluid py-5">
+                <div class="row">
+                    <div class="container">
+                        <div class="row py-5">
+                            <div class="col-sm-3 smart px-2">
+                                <h1 class="smart-content">iSM@RT</h1>
+                            </div>
+                            <div class="col-sm-9 px-2">
+                                <h1 class="smart-content">WAJIB LAPOR KETENAGAKERJAAN</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3 w-100 py-3 px-2 slide">
+                                <div class="text">
+                                    <a href="UL1.html" style="color: inherit;"><b>Upload Data WLK</b></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 w-100 py-3 px-2 slide button">
+                                <div class="text">
+                                    <a href="DK1.html" style="color: inherit;"><b>Data Karyawan</b></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 w-100 py-3 px-2 slide">
+                                <div class="text">
+                                    <a href="DP1.html" style="color: inherit;"><b>Data Perusahaan</b></a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 w-100 py-3 px-2 slide" y="10">
+                                <div class="text">
+                                    <b>Rekap Monitoring Laporan WLK</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- NOTIFICATION -->
+
+                <!-- END NOTIFICATION -->
+                <!--EVIDENCE DIBAWAH TOMBOL-->
+                <!--
+                <div class="row">
+                    <div class="container-fluid py-5">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4><b>EVIDENCE YANG PERLU DIPERSIAPKAN OLEH MASING-MASING WITEL</b></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3"></div>
+                            <div class="col-sm-3 pl-5 pr-2">
+                                <div class="container pr-0" style="background-color:transparent;">
+                                    <p class="pr-2" style="color: white; text-align: center; font-weight: bolder; border-right: 4px solid white; font-size: 18px;">
+                                        Terkait dengan Keselamatan & Kesehatan Kerja, meliputi:<br>
+                                        P2K3 (Panitia Pembina Keselamatan & Kesehatan Kerja<br>
+                                        Personil K3 (Keselamatan & Kesehatan Kerja)<br>
+                                        Keberadaan Fasilitas K3
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 pr-5 pl-2">
+                                <div class="container pl-0" style="background-color: transparent;">
+                                    <p class="pl-2" style="color: white; text-align:center; font-weight: bolder; font-size: 18px;border-left: 4px solid white;">
+                                        Terkait Penggunaan Alat & Bahan, yaitu data-data tentang hasil uji/ hasil periksa dari dinas terkait untuk:<br>
+                                        Instalasi Listrik<br>
+                                        Pembangkit Listrik<br>
+                                        Instalasi Pemadam Kebakaran<br>
+                                        Penyalur Petir<br>
+                                        Lift<br>
+                                        Alat-alat Berat dan sebagainya yang digunakan dalam lingkungan kantor.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <!-- END EVIDENCE DIBAWAH TOMBOL -->
+                <!-- EVIDENCE BACKGROUND DIBAWAH TOMBOL -->
+                <div class="row">
+                    <div class="container-fluid py-5">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4><b>EVIDENCE YANG PERLU DIPERSIAPKAN OLEH MASING-MASING WITEL</b></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2"></div>
+                            <div class="col-sm-4 pl-5 pr-0 pt-3" style="background-color:rgba(0,0,0,0.25); border-top-left-radius: 15px; border-bottom-left-radius: 15px;z-index: 10">
+                                <div class="container pr-0">
+                                    <p class="pr-0" style="color: white; text-align: left; font-weight: bolder; font-size: 18px;">
+                                        Terkait dengan Keselamatan & Kesehatan Kerja, meliputi:<br>
+                                        - P2K3 (Panitia Pembina Keselamatan & Kesehatan Kerja<br>
+                                        - Personil K3 (Keselamatan & Kesehatan Kerja)<br>
+                                        - Keberadaan Fasilitas K3
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 pr-5 pl-0 pt-3" style="background-color:rgba(0,0,0,0.3); border-top-right-radius: 15px; border-bottom-right-radius: 15px; z-index: 10">
+                                <div class="container pl-0">
+                                    <p class="pl-4" style="color: white; text-align:left; font-weight: bolder; font-size: 18px;border-left: 4px solid white;">
+                                        Terkait Penggunaan Alat & Bahan, yaitu data-data tentang hasil uji/ hasil periksa dari dinas terkait untuk:<br>
+                                        - Instalasi Listrik<br>
+                                        - Pembangkit Listrik<br>
+                                        - Instalasi Pemadam Kebakaran<br>
+                                        - Penyalur Petir<br>
+                                        - Lift<br>
+                                        - Alat-alat Berat dan sebagainya yang digunakan dalam lingkungan kantor.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END EVIDENCE DIKIRI TOMBOL -->
+            </div>
+        </div>
+
+        <!--Waves Container-->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    <filter id="blur">
+                        <feGaussianBlur stdDeviation="0"/>
+                    </filter>
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.3"  filter="url(#blur)"/>
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" filter="url(#blur)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.7)" filter="url(#blur)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255,255,255,1)"/>
+                </g>
+            </svg>
+        </div>
+        <!--Waves end-->
+
+    </div>
+    <div class="content flex">
+        <p class="foot">2020 | ABC@EF</p>
+    </div>
+    <!-- partial -->
+
 </body>
+
 </html>
