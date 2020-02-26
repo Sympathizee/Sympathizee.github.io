@@ -67,8 +67,26 @@
                           <div class="container-fluid w-100">
                             <div class="row p-0 m-0">
                               <div class="col-sm-12 px-2" style="text-align:left; color: white;font-weight: bold;">
-                                <form class="page-item">
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                                  </div>
+                                  <select class="custom-select upload-option" id="inputGroupSelect01">
+                                    <option value="0">--Informasi Perusahaan--</option>
+                                    <option value="1">AD-ART Telkom</option>
+                                    <option value="2">Bukti Pengesahan Badan Hukum</option>
+                                    <option value="3">Tanda Daftar Perusahaan</option>
+                                    <option value="4">Surat Izin Usaha Perdagangan</option>
+                                    <option value="5">Perjanjian Kerja Bersama</option>
+                                    <option value="6">Daftar Kota/Kabupaten</option>
+                                    <option value="7">Pengesahan Pendaftaran dari Kementrian Ketenagakerjaan</option>
+                                    <option value="8">Surat Izin Pelaksana Penempatan TKI Swasta</option>
+                                    <option value="9">Surat Izin Usaha Perekrutan dan Penempatan Awak Kapal</option>
+                                    <option value="10">LPTKS (Jika Melaksanakan)</option>
+                                  </select>
+                                </div>
+                                <form class="page-item upload-form">
+                                    <div id="1" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>AD-ART Telkom</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -80,7 +98,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                    <div id="2" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>Bukti Pengesahan Badan Hukum</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -92,7 +110,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                    <div id="3" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>Tanda Daftar Perusahaan</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -104,7 +122,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                    <div id="4" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>Surat Izin Usaha Perdagangan</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -116,7 +134,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                    <div id="5" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>Perjanjian Kerja Bersama</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -128,7 +146,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                    <div id="6" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>Daftar Kota/Kabupaten</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -140,7 +158,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                    <div id="7" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>Pengesahan Pendaftaran dari Kementrian Ketenagakerjaan</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -152,7 +170,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                    <div id="8" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>Surat Izin Pelaksana Penempatan TKI Swasta</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -164,7 +182,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                    <div id="9" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>Surat Izin Usaha Perekrutan dan Penempatan Awak Kapal</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -176,7 +194,7 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group pb-2 mb-2" style="text-align:left; color: white; font-size: 16px;">
+                                    <div id="10" class="form-group pb-2 mb-2 collapse" style="text-align:left; color: white; font-size: 16px;">
                                       <label for="Email1" class="pb-0 mb-1"><b>LPTKS (Jika Melaksanakan)</b></label>
                                       <div class="input-group mb-3">
                                         <div class="input-group-prepend">
@@ -188,10 +206,9 @@
                                         </div>
                                       </div>
                                     </div>
-                                    <div class="form-group float-right">
+                                    <div id="button" class="form-group float-right collapse">
                                       <button type="submit" class="btn page-link">Submit</button>
-                                    </div>
-                                    
+                                    </div>   
                                   </form>
                               </div>
                             </div>
@@ -212,16 +229,20 @@
 
 </body>
 <script type="text/javascript">
-    $(document).ready( function () {
-        $('#table_id').DataTable({
-            searching: true,
-            "lengthMenu": [[10],[10]],
-            lengthChange:false,
-            scrollY: '35vh',
-            "pagingType": "simple",
-            "scrollX":true,
-            "sScrollX":"100%",
-        });
-    } );
+    $(document).ready(function(){
+      $('select.upload-option').prop('selectedIndex',0);
+      var prev;
+      $('select.upload-option').change(function(){
+        var val = $(this).find(':selected').val()
+        if (val != 0) {
+          $('#'+prev).addClass('collapse');
+          $('#'+val).removeClass('collapse');
+          $('#button').removeClass('collapse');
+        }else{
+          $(".upload-form div.form-group").addClass('collapse');
+        };
+        prev = val;
+      });
+    });
 </script>
 </html>
