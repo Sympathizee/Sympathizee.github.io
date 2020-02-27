@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 122, 143, 1) 100%);
 }
 h1 {
   font-family: 'Lato', sans-serif;
@@ -177,6 +178,9 @@ p {
   .waves {
     height: 0px;
     min-height: 0px;
+  }
+  .content-footer{
+    visibility: hidden;
   }
   .content {
     height: 0vh;

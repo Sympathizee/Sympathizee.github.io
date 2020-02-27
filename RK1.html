@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Data Karyawan</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./DK1style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/fh-3.1.6/r-2.2.3/sc-2.0.1/sp-1.0.1/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/fh-3.1.6/r-2.2.3/sc-2.0.1/sp-1.0.1/datatables.min.js"></script>
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand px-5">Wajib Lapor Ketenagakerjaan</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100">
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="#"><b>Upload Data WLK</b></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="DK1.html"><b>Data Karyawan</b></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="DP1.html"><b>Dokumen Pendukung</b></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide active">
+                <a class="nav-text nav-link" href="#"><b>Rekap Monitoring Laporan WLK</b><span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="#"><b>Data Kota</b></a>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+        <div class="container-fluid">
+            <div class="row mx-5" style="background-color: transparent;">
+                <div class="container-fluid py-1">
+                    <div class="row">
+                        <div class="col-md-12 py-2 text-left b-bottom">
+                            <h4 class="m-auto" style="color:white;">
+                                <a href="index.html" style="text-decoration: none;text-decoration-color: none; color: white;">Home</a>
+                                >
+                                <a href="#" style="text-decoration: none;text-decoration-color: none; color: white;">Rekap Monitoring Laporan WLK</a>
+                            </h4>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="row border border-dark rounded p-3 mx-3 mb-3">
+                        
+                    </div>
+                    -->
+                    <div class="row p-3 mx-3 mb-3 rounded mt-3" style="background-color:transparent; border: 2px solid white;">
+                        <div class="row mx-3" style="color: white;">
+                            <h5>Rekap Monitoring Laporan WLK</h5>
+                        </div>
+                        <div class="col-md-12 rounded">
+                          <table class="table table-striped table-dark rounded w-100 h-100" id="table_id">
+                            <thead>
+                              <tr>
+                                  <th rowspan="2" class="align-middle">Nn.</th>
+                                  <th rowspan="2" class="align-middle">Regional</th>
+                                  <th rowspan="2" class="align-middle">WITEL</th>
+                                  <th rowspan="2" class="align-middle">KOTA/KAB</th>
+                                  <th colspan="6" class="align-middle">APLIKASI - http://wajiblapor.kemnaker.go.id</th>
+                                  <th rowspan="2" class="align-middle">Upload Dokumen</th>
+                              </tr>
+                              <tr>
+                                  <th>Sudah Akses</th>
+                                  <th>Sudah Pendaftaran</th>
+                                  <th>Kode Pendaftaran</th>
+                                  <th>Tgl Pendaftaran</th>
+                                  <th>Tgl Submit Laporan</th>
+                                  <th>Tgl Wajib lapor kembali</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td class="align-middle">Regional</td>
+                                <td class="align-middle">WITEL</td>
+                                <td class="align-middle">Bandung</td>
+                                <td id="akses1" class="align-middle">Belum</td>
+                                <td id="pendaftaran1" class="align-middle">Sudah</td>
+                                <td class="align-middle">0001414167820</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle"><button type="button" class="btn btn-secondary">Upload</button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td class="align-middle">Regional</td>
+                                <td class="align-middle">WITEL</td>
+                                <td class="align-middle">Bandung</td>
+                                <td id="akses2" class="align-middle">Sudah</td>
+                                <td id="pendaftaran2" class="align-middle">Belum</td>
+                                <td class="align-middle">0001414167820</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle"><button type="button" class="btn btn-secondary">Upload</button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td class="align-middle">Regional</td>
+                                <td class="align-middle">WITEL</td>
+                                <td class="align-middle">Bandung</td>
+                                <td id="akses3" class="align-middle">Belum</td>
+                                <td id="pendaftaran3" class="align-middle">Belum</td>
+                                <td class="align-middle">0001414167820</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle"><button type="button" class="btn btn-secondary">Upload</button></td>
+                              </tr>
+                              <tr>
+                                <th scope="row">4</th>
+                                <td class="align-middle">Regional</td>
+                                <td class="align-middle">WITEL</td>
+                                <td class="align-middle">Bandung</td>
+                                <td id="akses4" class="align-middle">Sudah</td>
+                                <td id="pendaftaran4" class="align-middle">Sudah</td>
+                                <td class="align-middle">0001414167820</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle">DD/MM/YYYY</td>
+                                <td class="align-middle"><button type="button" class="btn btn-secondary">Upload</button></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-footer flex">
+        <p class="foot">2020 | ABC@EF</p>
+    </div>
+    <!-- partial -->
+    <!--
+      MODAL
+    -->
+    <div class="modal fade" id="bandung" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Kode Pendaftaran</h5>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-12">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Nama Kota</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" value="Bandung" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Kode Pendaftaran</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" value="0001414167820">
+                    </div>
+                    <div class="form-group d-flex">
+                      <button type="submit" class="btn btn-primary ml-auto">Update</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="float-right">
+              <form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="Semarang" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Kode Pendaftaran</h5>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-12">
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Nama Kota</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" value="Semarang" disabled>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Kode Pendaftaran</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" value="0001414324520">
+                    </div>
+                    <div class="form-group d-flex"> 
+                      <button type="submit" class="btn btn-primary ml-auto">Update</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="float-right">
+              <form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+</body>
+<script type="text/javascript">
+    $(document).ready( function () {
+        $('#table_id').DataTable({
+            searching: true,
+            "lengthMenu": [[10],[10]],
+            lengthChange:false,
+            "ordering": false,
+            scrollY: '35vh',
+            "pagingType": "simple",
+            "scrollX":true,
+            "sScrollX":"100%",
+        });
+        $('#table_id > tbody > tr').each(function(index,tr){
+          if ($('#akses'+(index+1)).html() == 'Sudah') {
+            $('#akses'+(index+1)).addClass('text-success');
+            console.log($('#akses'+(index+1)).html());
+          }else{
+            $('#akses'+(index+1)).addClass('text-danger');
+            console.log($('#akses'+(index+1)).html());
+          };
+          if ($('#pendaftaran'+(index+1)).html() == 'Sudah') {
+            $('#pendaftaran'+(index+1)).addClass('text-success');
+            console.log($('#pendaftaran'+(index+1)).html());
+          }else{
+            $('#pendaftaran'+(index+1)).addClass('text-danger');
+            console.log($('#pendaftaran'+(index+1)).html());
+          };
+        });
+    } );
+</script>
+</html>

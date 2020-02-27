@@ -29,14 +29,17 @@
               <li class="nav-item smart px-3 nav-slide">
                 <a class="nav-text nav-link" href="#"><b>Upload Data WLK</b></a>
               </li>
-              <li class="nav-item active smart px-3 nav-slide">
+              <li class="nav-item smart px-3 nav-slide  active">
                 <a class="nav-text nav-link" href="DK1.html"><b>Data Karyawan</b><span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item smart px-3 nav-slide">
-                <a class="nav-text nav-link" href="DP1.html"><b>Data Perusahaan</b></a>
+                <a class="nav-text nav-link" href="DP1.html"><b>Dokumen Pendukung</b></a>
               </li>
               <li class="nav-item smart px-3 nav-slide">
                 <a class="nav-text nav-link" href="#"><b>Rekap Monitoring Laporan WLK</b></a>
+              </li>
+              <li class="nav-item smart px-3 nav-slide">
+                <a class="nav-text nav-link" href="#"><b>Data Kota</b></a>
               </li>
             </ul>
           </div>
@@ -61,11 +64,93 @@
                         
                     </div>
                     -->
-                    <div class="row p-3 mx-3 mb-3 rounded mt-3" style="background-color:transparent; border: 2px solid white;">
+                    <div class="row p-3 mx-3 mb-3 rounded mt-3 overflow-auto" style="background-color:transparent; border: 2px solid white; max-height: 60vh; max-width: 90vw;">
                         <div class="row mx-3" style="color: white;">
                             <h5>Informasi Karyawan</h5>
                         </div>
                         <div class="col-md-12 rounded">
+                            <form id="usercollapse" class="page-item">
+                                <div class="form-row">
+                                    <label for="Email1" class="col-sm-6" style="text-align: left;color: white;"><b>Filter Data Karyawan</b></label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group pb-2 mb-2 col-sm-4" style="text-align:left; color: white; font-size: 16px;">
+                                        <label for="filter_type1" class="" style="text-align: left;color: white;"><b>Filter Type</b></label>
+                                        <select class="form-control" id="filter_type1">
+                                            <option>---TYPE---</option>
+                                            <option>Nomor Induk Kependudukan</option>
+                                            <option>Nama Lengkap</option>
+                                            <option>Jabatan</option>
+                                            <option>Pendidikan</option>
+                                            <option>Status Ketenagakerjaan</option>
+                                            <option>Jenis Kelamin</option>
+                                            <option>Tanggal Lahir</option>
+                                            <option>Disabilitas/Tidak</option>
+                                            <option>Masih Bekerja/Tidak</option>
+                                            <option>Alamat</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2 col-sm-4" style="text-align:left; color: white; font-size: 16px;">
+                                        <label for="Email1" class="" style="text-align: left;color: white;"><b>Logic</b></label>
+                                        <select class="form-control" id="logic1">
+                                            <option>---LOGIC---</option>
+                                            <option>EQUAL WITH (=)</option>
+                                            <option>MORE THAN (>)</option>
+                                            <option>LESS THAN (<)</option>
+                                            <option>EQUAL OR LESS THAN (<=)</option>
+                                            <option>EQUAL OR MORE THAN (>=)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2 col-sm-3" style="text-align:left; color: white; font-size: 16px;">
+                                        <label for="filter1" class="" style="text-align: left;color: white;"><b>Filter By</b></label>
+                                        <input type="text" class="form-control pt-0" id="filter1" placeholder="Filter">
+                                    </div>
+                                    <div class="form-group pb-2 mb-2 col-sm-1" style="text-align:left; color: white; font-size: 16px;">
+                                        <label for="Email1" class="" style="text-align: left;color: white;"><b>Add or Remove</b></label>
+                                        <button class="btn btn-primary w-100">+</button>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group pb-2 mb-2 col-sm-4" style="text-align:left; color: white; font-size: 16px;">
+                                        <label for="filter_type1" class="" style="text-align: left;color: white;"><b>Filter Type</b></label>
+                                        <select class="form-control" id="filter_type1">
+                                            <option>---TYPE---</option>
+                                            <option>Nomor Induk Kependudukan</option>
+                                            <option>Nama Lengkap</option>
+                                            <option>Jabatan</option>
+                                            <option>Pendidikan</option>
+                                            <option>Status Ketenagakerjaan</option>
+                                            <option>Jenis Kelamin</option>
+                                            <option>Tanggal Lahir</option>
+                                            <option>Disabilitas/Tidak</option>
+                                            <option>Masih Bekerja/Tidak</option>
+                                            <option>Alamat</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2 col-sm-4" style="text-align:left; color: white; font-size: 16px;">
+                                        <label for="Email1" class="" style="text-align: left;color: white;"><b>Logic</b></label>
+                                        <select class="form-control" id="logic1">
+                                            <option>---LOGIC---</option>
+                                            <option>EQUAL WITH (=)</option>
+                                            <option>MORE THAN (>)</option>
+                                            <option>LESS THAN (<)</option>
+                                            <option>EQUAL OR LESS THAN (<=)</option>
+                                            <option>EQUAL OR MORE THAN (>=)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group pb-2 mb-2 col-sm-3" style="text-align:left; color: white; font-size: 16px;">
+                                        <label for="filter1" class="" style="text-align: left;color: white;"><b>Filter By</b></label>
+                                        <input type="text" class="form-control pt-0" id="filter1" placeholder="Filter">
+                                    </div>
+                                    <div class="form-group pb-2 mb-2 col-sm-1" style="text-align:left; color: white; font-size: 16px;">
+                                        <label for="Email1" class="" style="text-align: left;color: white;"><b>Add or Remove</b></label>
+                                        <button class="btn btn-danger w-100">x</button>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <button type="submit" class="btn btn-primary col-sm-1 ml-1">Submit Filter</button>
+                                </div>
+                            </form>
                             <table class="table table-striped table-dark rounded w-100 h-100" id="table_id">
                                 <thead>
                                     <tr>
